@@ -1,0 +1,88 @@
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./src/styles.css ***!
+  \********************************************************************************************************************************************************************************************************/
+.outer {
+  background-image: url('_-images-background.png');
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 100vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat:no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%; /* Resize the background image to cover the entire container */
+}
+.panel-heading{
+  text-align: center;
+  margin-bottom: 10px;
+}
+#forget {
+  min-width:100px;
+  text-decoration: none;
+  margin-left: auto;
+  cursor:pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+.form-inline label {
+  padding-left: 10px;
+  margin:0px;
+  cursor: pointer;
+}
+button {
+  margin-top:20px;
+  border-radius: 15px;
+  background-color: #896082;
+  border:none;
+  padding: 5px;
+}
+.panel {
+  min-height: 380px;
+  box-shadow: 20px 20px 80px rgb(218,218,218);
+  border-radius: 20px;
+  margin-top: 30%;
+}
+.input-field {
+
+  border-radius: 5px;
+  padding:5px;
+  display:flex;
+  align-items: center;
+  cursor:pointer;
+  border:1px solid #896082;
+
+}
+.input-field.error {
+  border:1px solid red;
+  color:red;
+  margin-bottom: 10px;
+}
+input[type='text'],
+input[type='password'] {
+  border:none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+}
+.fa-eye-slash.btn {
+  border:none;
+  outline: none;
+  box-shadow: none;
+}
+.ml4 {
+  margin-left: 4%;
+}
+#img {
+  background-image: url('_-images-ZENYogaLogo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 120px; /*or your image's height*/
+  margin: 0px;
+  width: 100%;
+  position: relative;
+  left:10%;
+}
+h6 {
+  padding: 0px;
+}
+
+
+/*# sourceMappingURL=styles.css.map*/

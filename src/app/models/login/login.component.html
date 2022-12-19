@@ -1,0 +1,40 @@
+<div class="outer">
+  <div class="container ml3">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+      <div class="panel border bg-white">
+        <div class="panel-heading">
+          <div id="img"></div>
+          <h6 class="m-0 font-weight-bold">Log in</h6>
+        </div>
+        <div id="scroll" class="panel-body p-5 pt-1 pb-4">
+          <form [formGroup]="loginForm">
+            <div class="form-group pt-1">
+              <div class="input-field" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">
+                <span class="fa fa-user p-2"> </span>
+                <input formControlName="email" type="text" placeholder="Email">
+              </div>
+            </div>
+            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')"
+                   class="text-danger mb-0 pt-0 pb-0">*Email is required!</small>
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                  <span class="fa fa-lock p-2"> </span>
+                  <input formControlName="password" [type]="type" placeholder="Password">
+                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                </div>
+            </div>
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+                   class="text-danger">Password is required!</small>
+            <div class="form-inline ft mt-3 p-0">
+              <a id="forget" class="font-weight-bold">Forget password?</a>
+            </div>
+            <button (click)="onLogin()" type="submit" class="mt-4 w-100">Log in</button>
+            <div class="text-center pt-4 text-muted">Don't have account? <a routerLink="/signup">Sign up!</a> </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
