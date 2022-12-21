@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <div id="img" alt="logo"></div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/homepage">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a class="nav-link" routerLink="/myclasses">My classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">Shop</a>
+      </li>
+      <li class="nav-item" *ngIf="role==='Admin' && isLoggedIn()">
+        <a class="nav-link" routerLink="">Admin panel</a>
+      </li>
+    </ul>
+
+    <button id="login" *ngIf="!isLoggedIn()">
+      <a class="nav-link" routerLink="/login">Login</a>
+    </button>
+    <button id="signup" *ngIf="!isLoggedIn()">
+      <a class="nav-link" routerLink="/signup">Sign Up</a>
+    </button>
+    <button id="profile" *ngIf="isLoggedIn()">
+      <a class="nav-link">{{fullName}}</a>
+    </button>
+    <button id="logout"*ngIf="isLoggedIn()" (click)="logout()">Log Out
+    </button>
+
+  </div>
+</nav>
+

@@ -1,0 +1,39 @@
+.outer {
+  background-image: none;
+  background-color: white;
+}
+a {
+  padding: 10px;
+  font-weight: bold;
+  color:black;
+}
+#img {
+  width: 170px;
+  height: 100%;
+}
+button {
+  padding: 0px 10px 0px 10px;
+  margin: 0px 6px 0px 6px;
+  position:absolute;
+  right:1%;
+  border-radius: 8px;
+}
+button a {
+  color:white;
+  font-size: 12px;
+  font-weight: normal;
+}
+#login {
+  right:7%;
+}
+#signup {
+  background-color: #26462E;
+}
+#logout {
+  color:white;
+  padding:5px 12px 5px 12px;
+
+}
+#profile {
+  right: 7%;
+}
