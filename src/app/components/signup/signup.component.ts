@@ -3,6 +3,7 @@ import {UntypedFormBuilder, FormControl, UntypedFormGroup, Validators} from "@an
 import ValidateForm from "../../helpers/validateforms";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
+import {NavbarService} from "../../services/navbar.service";
 
 @Component({
   selector: 'app-signup',
@@ -15,9 +16,11 @@ export class SignupComponent implements OnInit {
   signUpForm!:UntypedFormGroup;
   constructor(private fb:UntypedFormBuilder,
               private authService:AuthService,
-              private router:Router) { }
+              private router:Router,
+              private navbar: NavbarService) { }
 
   ngOnInit(): void {
+    this.navbar.hide();
     this.signUpForm = this.fb.group({
       firstName: ['',Validators.required],
       lastName: ['',Validators.required],

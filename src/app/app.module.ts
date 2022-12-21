@@ -4,18 +4,25 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './models/login/login.component';
-import { SignupComponent } from './models/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { HomepageComponent } from './models/homepage/homepage.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { MyclassesComponent } from './components/myclasses/myclasses.component';
+import {TokenInterceptor} from "./interceptors/token.interceptor";
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomepageComponent
+    HomepageComponent,
+    MyclassesComponent,
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -23,9 +30,14 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

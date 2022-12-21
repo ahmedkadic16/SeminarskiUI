@@ -1,3 +1,8 @@
 <div>
-<router-outlet></router-outlet>
+  <app-navbar *ngIf="navBar.visible"></app-navbar>
 </div>
+<div class="routerOutler">
+    <router-outlet></router-outlet>
+</div>
+
+
