@@ -9,12 +9,14 @@ export class NavbarService {
   constructor() {
     this.visible=true;
   }
+  //controls
   hide() { this.visible = false; }
 
   show() { this.visible = true; }
 
   toggle() { this.visible = !this.visible; }
 
+  //get
   getVisibility():boolean {
     return this.visible;
   }

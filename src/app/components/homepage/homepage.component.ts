@@ -7,7 +7,9 @@ import {NavbarService} from "../../services/navbar.service";
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit{
+
   constructor(private navBar:NavbarService) {
+
   }
   ngOnInit() {
     this.navBar.show();

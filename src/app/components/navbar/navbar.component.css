@@ -23,17 +23,13 @@ button a {
   font-size: 12px;
   font-weight: normal;
 }
-#login {
+#login, #profile {
   right:7%;
 }
-#signup {
+#signup, #profile{
   background-color: #26462E;
 }
 #logout {
   color:white;
   padding:5px 12px 5px 12px;
-
-}
-#profile {
-  right: 7%;
 }

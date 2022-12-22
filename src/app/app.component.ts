@@ -7,7 +7,7 @@ import {NavbarService} from "./services/navbar.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ProjectNew';
+  title = 'Seminarski';
 
   constructor(public navBar: NavbarService) {
   }

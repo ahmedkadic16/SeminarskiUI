@@ -9,6 +9,7 @@ export class ApiService {
   private baseUrl ="https://localhost:44391/api/User";
   constructor(private http:HttpClient) { }
 
+  //getUser/s
   getUser():Observable<any> {
    return this.http.get<any>(this.baseUrl+"/getAllUsers");
   }

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
 import {JwtHelperService} from "@auth0/angular-jwt"
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,7 @@ export class AuthService {
               private router:Router) {
     this.userPayload = this.decodedToken();
   }
+  //emailloggedin
   public getEmailLoggedIn() {
     return this.emailLoggedIn;
   }
@@ -21,10 +23,10 @@ export class AuthService {
     this.emailLoggedIn=email;
   }
 
+  //login signup signout
   signUp(userObj:any): Observable<any> {
-  return this.httpClient.post<any>(this.baseUrl+"/register",userObj)
+    return this.httpClient.post<any>(this.baseUrl+"/register",userObj)
   }
-
   login(loginObj:any): Observable<any> {
     return this.httpClient.post<any>(this.baseUrl+"/authenticate",loginObj)
   }
@@ -32,14 +34,16 @@ export class AuthService {
     localStorage.clear();
     this.router.navigate(['/homepage']);
   }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token'); //if token == null => false ; true
+  }
+
+  //token
   storeToken(tokenValue:string) {
     localStorage.setItem('token',tokenValue)
   }
   getToken() {
     return localStorage.getItem('token');
-  }
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token'); //if token == null => false ; true
   }
   decodedToken() {
     const jwtHelper = new JwtHelperService();
@@ -48,6 +52,7 @@ export class AuthService {
     return jwtHelper.decodeToken(token);
   }
 
+  //get payload from token
   getFullNameFromToken() {
       if(this.userPayload)
         return this.userPayload.unique_name;

@@ -11,8 +11,8 @@ import {ApiService} from "../../services/api.service";
 })
 export class NavbarComponent implements OnInit{
   public fullName:string= "";
-  public user:any=null;
   public role:string="";
+
   constructor(private navBar:NavbarService,
               private auth:AuthService,
               private userStore:UserStoreService,
@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit{
 
   ngOnInit(): void {
     this.navBar.show();
+
     this.userStore.getFullNameFromStore().subscribe(val => {
       let fullNameFromToken = this.auth.getFullNameFromToken();
       this.fullName = val || fullNameFromToken
@@ -28,25 +29,14 @@ export class NavbarComponent implements OnInit{
       let roleFromToken = this.auth.getRoleFromToken();
       this.role = val || roleFromToken
     });
-    if(this.isLoggedIn()) {
-      this.getUser(this.auth.getEmailLoggedIn());
-    }
   }
-  getUser(email:string) {
-    this.api.getUserByEmail(email).subscribe(x=> this.user=x);
-  }
-  getNav() {
-    return this.navBar.visible;
-  }
+
+  //login logout
   isLoggedIn():boolean {
     return this.auth.isLoggedIn();
   }
   logout() {
-    this.user=null;
     this.auth.signOut();
   }
 
-  getName():string {
-    return this.user.firstName;
-  }
 }

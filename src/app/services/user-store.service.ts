@@ -11,20 +11,21 @@ export class UserStoreService {
 
   constructor() { }
 
+  //Role
   public getRoleFromStore() {
     return this.role$.asObservable();
   }
   public setRoleForStore(role:string) {
     this.role$.next(role);
   }
-
+  //FullName
   public getFullNameFromStore() {
     return this.fullName$.asObservable();
   }
   public setFullNameForStore(unique_name:string) {
     this.fullName$.next(unique_name);
   }
-
+  //Email
   public getEmailFromStore() {
     return this.email$.asObservable();
   }

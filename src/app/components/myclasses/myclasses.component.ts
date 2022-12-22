@@ -15,9 +15,10 @@ export class MyclassesComponent  implements OnInit{
 
   ngOnInit() {
     this.nav.show();
+
     this.getUsers();
   }
-
+  //testing
   getUsers() {
     this.api.getUser().subscribe(x=> this.users=x);
   }

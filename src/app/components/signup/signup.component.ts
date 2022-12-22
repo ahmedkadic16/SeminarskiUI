@@ -11,9 +11,8 @@ import {NavbarService} from "../../services/navbar.service";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-
   signUpForm!:UntypedFormGroup;
+
   constructor(private fb:UntypedFormBuilder,
               private authService:AuthService,
               private router:Router,
