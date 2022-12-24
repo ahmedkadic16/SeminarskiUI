@@ -15,6 +15,7 @@ export class AuthService {
               private router:Router) {
     this.userPayload = this.decodedToken();
   }
+
   //emailloggedin
   public getEmailLoggedIn() {
     return this.emailLoggedIn;
@@ -48,7 +49,7 @@ export class AuthService {
   decodedToken() {
     const jwtHelper = new JwtHelperService();
     const token = this.getToken()!;
-    console.log("tokenOOEOEOEO"+jwtHelper.decodeToken(token))
+    //console.log("token"+jwtHelper.decodeToken(token))
     return jwtHelper.decodeToken(token);
   }
 

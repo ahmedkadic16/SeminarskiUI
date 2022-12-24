@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {NavbarService} from "../../services/navbar.service";
 import {AuthService} from "../../services/auth.service";
 import {UserStoreService} from "../../services/user-store.service";
-import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-navbar',
@@ -15,8 +14,9 @@ export class NavbarComponent implements OnInit{
 
   constructor(private navBar:NavbarService,
               private auth:AuthService,
-              private userStore:UserStoreService,
-              private api:ApiService) { }
+              private userStore:UserStoreService) {
+
+      }
 
   ngOnInit(): void {
     this.navBar.show();

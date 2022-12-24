@@ -32,6 +32,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NgbModule,
     HttpClientModule,
 
+
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,

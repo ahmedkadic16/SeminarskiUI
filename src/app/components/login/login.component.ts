@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
   //login
   onLogin() {
     if(this.loginForm.valid) {
-      this.navbar.show();
       this.authService.login(this.loginForm.value)
         .subscribe({
           next:(res)=>{
