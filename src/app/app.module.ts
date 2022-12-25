@@ -13,6 +13,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { MyclassesComponent } from './components/myclasses/myclasses.component';
 import {TokenInterceptor} from "./interceptors/token.interceptor";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomepageComponent,
     MyclassesComponent,
     NavbarComponent,
+    ShopComponent,
 
   ],
   imports: [

@@ -1,0 +1,14 @@
+#coverimg {
+  background-image: url("images/shopcover.png");
+}
+h1{
+  text-align: center;
+  color:white;
+  position: absolute;
+  top: 30%;
+  left:32%;
+}
+h5 {
+  margin-top: 2%;
+  text-align: center;
+}
