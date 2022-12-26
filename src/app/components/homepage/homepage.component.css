@@ -10,9 +10,12 @@ p {
 p:nth-child(2) {
   top:36%;
 }
-.row {
+h2 {
+  margin: 0px;
+}
+#poruka {
   margin: 0px;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   background-color:  #E1EFE5;
 }
